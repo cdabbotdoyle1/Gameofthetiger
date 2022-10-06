@@ -21,14 +21,17 @@
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
     "socket.io-client": "^2.3.0",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.7",
+    "@snyk/protect": "latest"
   },
   "scripts": {
     "start": "cd server && npm install && npm start",
     "build": "react-scripts build && cd server && npm install",
     "heroku-postbuild": "react-scripts build && npm run build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -47,5 +50,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "snyk": true
 }
